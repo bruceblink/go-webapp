@@ -17,3 +17,9 @@ Watersports subtotal: $323.95
 Total: $79973.40
 main function complete
 */
+
+/* after add goroutine in CalcStoreTotal function
+main function started
+Total: $0.00
+main function complete
+*/

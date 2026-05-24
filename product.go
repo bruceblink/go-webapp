@@ -1,5 +1,7 @@
 package main
 
+import "strconv"
+
 type Product struct {
 	Name, Category string
 	Price          float64
@@ -19,6 +21,10 @@ type ProductGroup []*Product
 type ProductData = map[string]ProductGroup
 
 var Products = make(ProductData)
+
+func ToCurrency(val float64) string {
+	return "$" + strconv.FormatFloat(val, 'f', 2, 64)
+}
 
 func init() {
 	for _, p := range products {

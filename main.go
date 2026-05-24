@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
 	fmt.Printf("main function started \n")
 	CalcStoreTotal(Products)
-	time.Sleep(time.Second * 5)
+	//time.Sleep(time.Second * 5)
 	fmt.Printf("main function complete")
 }
 
@@ -34,5 +33,14 @@ Total: $0.00
 Running subtotal: $79595.00
 Soccer subtotal: $54.45
 Watersports subtotal: $323.95
+main function complete
+*/
+
+/* use channel transform goroutine's result
+main function started
+Running subtotal: $79595.00
+Soccer subtotal: $54.45
+Watersports subtotal: $323.95
+Total: $79973.40
 main function complete
 */

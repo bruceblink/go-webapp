@@ -5,22 +5,27 @@ import "fmt"
 func main() {
 	naturals := make(chan int)
 	squares := make(chan int)
+	go counter(naturals)
+	go squarer(squares, naturals)
+	printer(squares)
+}
 
-	go func() {
-		for x := 0; x < 100; x++ {
-			naturals <- x
-		}
-		close(naturals)
-	}()
+func counter(out chan<- int) {
+	for i := 0; i < 100; i++ {
+		out <- i
+	}
+	close(out)
+}
 
-	go func() {
-		for x := range naturals {
-			squares <- x * x
-		}
-		close(squares)
-	}()
+func squarer(out chan<- int, in <-chan int) {
+	for v := range in {
+		out <- v * v
+	}
+	close(out)
+}
 
-	for x := range squares {
-		fmt.Println(x)
+func printer(in <-chan int) {
+	for v := range in {
+		fmt.Println(v)
 	}
 }

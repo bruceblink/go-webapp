@@ -1,15 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Printf("main function started \n")
-	CalcStoreTotal(Products)
-	//time.Sleep(time.Second * 5)
-	fmt.Printf("main function complete")
-}
+//func main() {
+//	fmt.Printf("main function started \n")
+//	CalcStoreTotal(Products)
+//	//time.Sleep(time.Second * 5)
+//	fmt.Printf("main function complete")
+//}
 
 // output
 /*

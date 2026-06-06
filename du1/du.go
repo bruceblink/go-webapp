@@ -31,7 +31,7 @@ func main() {
 }
 
 func dirents(dir string) []os.DirEntry {
-	entries, err := os.ReadDir(".")
+	entries, err := os.ReadDir(dir)
 	if err != nil {
 		log.Fatal(err)
 	}

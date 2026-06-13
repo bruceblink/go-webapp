@@ -1,8 +1,8 @@
 package main
 
 import (
-	"concurrency/controllers"
-	"concurrency/models"
+	"go-webapp/controllers"
+	"go-webapp/models"
 
 	"github.com/gin-gonic/gin"
 )

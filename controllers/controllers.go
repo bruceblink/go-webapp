@@ -34,6 +34,15 @@ func CreateEmployee(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"data": employee})
 }
 
+func FindEmployee(ctx *gin.Context) {
+	var employee models.Employee
+	if err := models.DB.Where("id = ?", ctx.Param("id")).First(&employee).Error; err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{"data": employee})
+}
+
 func UpdateEmployee(ctx *gin.Context) {
 	var employee models.Employee
 	if err := models.DB.Where("id = ?", ctx.Param("id")).First(&employee).Error; err != nil {

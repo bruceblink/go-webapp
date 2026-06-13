@@ -14,6 +14,7 @@ func main() {
 	ginInstance.GET("/employees", controllers.FindEmployees)
 	ginInstance.POST("/employees", controllers.CreateEmployee)
 	ginInstance.GET("/employees/:id", controllers.FindEmployee)
+	ginInstance.DELETE("/employees/:id", controllers.DeleteEmployee)
 	err := ginInstance.Run()
 	if err != nil {
 		return

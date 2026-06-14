@@ -34,7 +34,7 @@ func (RandomServer) GetDate(ctx context.Context, r *protoapi.RequestDateTime) (*
 }
 
 func (RandomServer) GetRandom(ctx context.Context, r *protoapi.RandomParams) (*protoapi.RandomInt, error) {
-	rand.New(rand.NewSource(r.GetSeed()))
+	rand.NewSource(r.GetSeed())
 	place := r.GetPlace()
 
 	temp := random(min, max)
